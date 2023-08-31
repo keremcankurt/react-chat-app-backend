@@ -12,7 +12,7 @@ connectDB()
 const app = express()
 
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://kckchat.netlify.app");
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
     res.header("Access-Control-Allow-Credentials", "true");
@@ -37,7 +37,7 @@ const server = app.listen(
 const io = require('socket.io')(server, {
   pingTimeout: 60000,
   cors: {
-    origin: 'https://kckchat.netlify.app'
+    origin: 'http://localhost:3000'
   }
 })
 
